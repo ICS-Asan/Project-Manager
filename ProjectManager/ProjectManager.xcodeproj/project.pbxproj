@@ -27,9 +27,9 @@
 		FB85DA2A27CDE31F0065FD72 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FB85DA2927CDE31F0065FD72 /* RxCocoa */; };
 		FB85DA2C27CDE31F0065FD72 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FB85DA2B27CDE31F0065FD72 /* RxRelay */; };
 		FB85DA2E27CDE31F0065FD72 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FB85DA2D27CDE31F0065FD72 /* RxSwift */; };
-		FB85DA3427CDF8970065FD72 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB85DA3227CDF8970065FD72 /* ToDo.xcdatamodeld */; };
-		FB85DA3727CDF91E0065FD72 /* ToDo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85DA3527CDF91D0065FD72 /* ToDo+CoreDataClass.swift */; };
-		FB85DA3827CDF91E0065FD72 /* ToDo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85DA3627CDF91E0065FD72 /* ToDo+CoreDataProperties.swift */; };
+		FB85DA3427CDF8970065FD72 /* ProjectData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB85DA3227CDF8970065FD72 /* ProjectData.xcdatamodeld */; };
+		FB85DA3727CDF91E0065FD72 /* ProjectData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85DA3527CDF91D0065FD72 /* ProjectData+CoreDataClass.swift */; };
+		FB85DA3827CDF91E0065FD72 /* ProjectData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85DA3627CDF91E0065FD72 /* ProjectData+CoreDataProperties.swift */; };
 		FB85DA3C27D1AD430065FD72 /* ProjectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85DA3B27D1AD430065FD72 /* ProjectListCell.swift */; };
 		FB85DA3E27D1B2370065FD72 /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85DA3D27D1B2370065FD72 /* CellReusable.swift */; };
 		FB9EDAB127D5FBE300C78BE1 /* EditProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9EDAB027D5FBE300C78BE1 /* EditProjectViewController.swift */; };
@@ -65,8 +65,8 @@
 		FB16501127D2066D00C145D6 /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
 		FB1FC05D27E22DB6002A5791 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		FB85DA3327CDF8970065FD72 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
-		FB85DA3527CDF91D0065FD72 /* ToDo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FB85DA3627CDF91E0065FD72 /* ToDo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FB85DA3527CDF91D0065FD72 /* ProjectData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FB85DA3627CDF91E0065FD72 /* ProjectData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB85DA3B27D1AD430065FD72 /* ProjectListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListCell.swift; sourceTree = "<group>"; };
 		FB85DA3D27D1B2370065FD72 /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
 		FB9EDAB027D5FBE300C78BE1 /* EditProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewController.swift; sourceTree = "<group>"; };
@@ -117,9 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				47F8F60927CDEA96008919E3 /* CoreDataManager.swift */,
-				FB85DA3527CDF91D0065FD72 /* ToDo+CoreDataClass.swift */,
-				FB85DA3627CDF91E0065FD72 /* ToDo+CoreDataProperties.swift */,
-				FB85DA3227CDF8970065FD72 /* ToDo.xcdatamodeld */,
+				FB85DA3527CDF91D0065FD72 /* ProjectData+CoreDataClass.swift */,
+				FB85DA3627CDF91E0065FD72 /* ProjectData+CoreDataProperties.swift */,
+				FB85DA3227CDF8970065FD72 /* ProjectData.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 			files = (
 				FB85DA3E27D1B2370065FD72 /* CellReusable.swift in Sources */,
 				47F9812D27D1F6550046FE9E /* ProjectListHeaderView.swift in Sources */,
-				FB85DA3427CDF8970065FD72 /* ToDo.xcdatamodeld in Sources */,
+				FB85DA3427CDF8970065FD72 /* ProjectData.xcdatamodeld in Sources */,
 				FB16501227D2066D00C145D6 /* AddProjectViewController.swift in Sources */,
 				FB9EDACC27E1C93400C78BE1 /* ProjectState.swift in Sources */,
 				471E379327EC6DCF00108715 /* EditProjectViewModel.swift in Sources */,
@@ -308,7 +308,7 @@
 				FBD493FB27D2095200BA412F /* ProjectFormView.swift in Sources */,
 				C7431F0A25F51E1D0094C4CF /* MainViewController.swift in Sources */,
 				C7431F0625F51E1D0094C4CF /* AppDelegate.swift in Sources */,
-				FB85DA3827CDF91E0065FD72 /* ToDo+CoreDataProperties.swift in Sources */,
+				FB85DA3827CDF91E0065FD72 /* ProjectData+CoreDataProperties.swift in Sources */,
 				FB85DA3C27D1AD430065FD72 /* ProjectListCell.swift in Sources */,
 				471E379827ECA22100108715 /* ProjectRepositoryDelegate.swift in Sources */,
 				471E379627ECA0B400108715 /* Typealias.swift in Sources */,
@@ -320,7 +320,7 @@
 				471E378F27EC6D5D00108715 /* AddProjectViewModel.swift in Sources */,
 				C7431F0825F51E1D0094C4CF /* SceneDelegate.swift in Sources */,
 				4726657D27E30DF700AC4BC3 /* ProjectListCellDelegate.swift in Sources */,
-				FB85DA3727CDF91E0065FD72 /* ToDo+CoreDataClass.swift in Sources */,
+				FB85DA3727CDF91E0065FD72 /* ProjectData+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,13 +593,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		FB85DA3227CDF8970065FD72 /* ToDo.xcdatamodeld */ = {
+		FB85DA3227CDF8970065FD72 /* ProjectData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				FB85DA3327CDF8970065FD72 /* ToDo.xcdatamodel */,
 			);
 			currentVersion = FB85DA3327CDF8970065FD72 /* ToDo.xcdatamodel */;
-			path = ToDo.xcdatamodeld;
+			path = ProjectData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
