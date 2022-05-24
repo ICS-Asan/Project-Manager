@@ -7,14 +7,6 @@ struct Project: Equatable {
     var state: ProjectState
     let id: UUID
     
-    init(title: String?, body: String?, date: TimeInterval) {
-        self.title = title
-        self.body = body
-        self.date = date
-        self.state = ProjectState.todo
-        self.id = UUID()
-    }
-    
     var formattedDate: String {
         let dateFormatter = DateFormatter.shared
         let currentDate = Date(timeIntervalSince1970: date)
@@ -25,5 +17,15 @@ struct Project: Equatable {
     var isExpired: Bool {
         let dateFormatter = DateFormatter.shared
         return formattedDate < dateFormatter.string(from: Date())
+    }
+}
+
+extension Project {
+    init(title: String?, body: String?, date: TimeInterval) {
+        self.title = title
+        self.body = body
+        self.date = date
+        self.state = ProjectState.todo
+        self.id = UUID()
     }
 }

@@ -1,18 +1,15 @@
 import Foundation
 
-enum ProjectState {
-    case todo
-    case doing
-    case done
+enum ProjectState: String {
+    case todo = "TODO"
+    case doing = "DOING"
+    case done = "DONE"
+    
+    init?(title: String) {
+        self.init(rawValue: title)
+    }
     
     var title: String {
-        switch self {
-        case .todo:
-            return "TODO"
-        case .doing:
-            return "DOING"
-        case .done:
-            return "DONE"
-        }
+        return self.rawValue
     }
 }

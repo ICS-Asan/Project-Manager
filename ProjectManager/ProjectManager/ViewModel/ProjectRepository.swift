@@ -2,6 +2,7 @@ import Foundation
 
 class ProjectRepository {
     weak var delegate: ProjectRepositoryDelegate?
+    let coreDataManager = CoreDataManager<ProjectData>(entityName: ProjectData.entityName)
     private var selectedProject: Project?
     private var projects: [Project] = [] {
         didSet {
