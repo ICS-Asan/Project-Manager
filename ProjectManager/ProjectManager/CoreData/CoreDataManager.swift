@@ -24,7 +24,7 @@ class CoreDataManager<T: NSManagedObject> {
         }
     }
     
-    func create(values: [String: Any], errorHandler: (Error) -> Void) {
+    func create(values: [String: Any?], errorHandler: (Error) -> Void) {
         let object = T(context: context)
         values.forEach { (key, value) in
             object.setValue(value, forKey: key)
@@ -46,7 +46,7 @@ class CoreDataManager<T: NSManagedObject> {
         return []
     }
     
-    func update(object: T, values: [String: Any], errorHandler: (Error) -> Void) {
+    func update(object: T, values: [String: Any?], errorHandler: (Error) -> Void) {
         values.forEach { (key, value) in
             object.setValue(value, forKey: key)
         }
@@ -64,5 +64,16 @@ class CoreDataManager<T: NSManagedObject> {
         } catch {
             errorHandler(error)
         }
+    }
+    
+    func search(request: NSFetchRequest<T>, id: String, errorHandler: (Error) -> Void) -> [T] {
+        do {
+            let predicate = NSPredicate(format: "id == %@", id)
+            request.predicate = predicate
+            return try context.fetch(request)
+        } catch {
+            errorHandler(error)
+        }
+        return []
     }
 }

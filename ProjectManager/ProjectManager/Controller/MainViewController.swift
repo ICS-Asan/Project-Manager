@@ -3,6 +3,7 @@ import RxSwift
 
 class MainViewController: UIViewController {
     private let viewModel = MainViewModel()
+    private let viewDidLoadObserver: PublishSubject<Void> = .init()
     private let moveToToDoObserver: PublishSubject<CellInformation> = .init()
     private let moveToDoingObserver: PublishSubject<CellInformation> = .init()
     private let moveToDoneObserver: PublishSubject<CellInformation> = .init()
@@ -89,10 +90,12 @@ class MainViewController: UIViewController {
         setupNavigationBar()
         setupStackViewLayout()
         registerProjectListCell()
+        viewDidLoadObserver.onNext(())
     }
     
     private func bind() {
         let input = MainViewModel.Input(
+            viewDidLoadObserver: viewDidLoadObserver.asObserver(),
             moveToToDoObserver: moveToToDoObserver.asObservable(),
             moveToDoingObserver: moveToDoingObserver.asObservable(),
             moveToDoneObserver: moveToDoneObserver.asObservable(),

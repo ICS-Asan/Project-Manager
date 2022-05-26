@@ -7,6 +7,14 @@ struct Project: Equatable {
     var state: ProjectState
     let id: UUID
     
+    var dictionary: [String: Any?] {
+        return ["title": title,
+                "body": body,
+                "date": date,
+                "state": state.title,
+                "id": id]
+    }
+    
     var formattedDate: String {
         let dateFormatter = DateFormatter.shared
         let currentDate = Date(timeIntervalSince1970: date)

@@ -10,6 +10,7 @@ protocol ViewModelDescribing {
 
 class MainViewModel: ViewModelDescribing {
     final class Input {
+        let viewDidLoadObserver: Observable<Void>
         let moveToToDoObserver: Observable<CellInformation>
         let moveToDoingObserver: Observable<CellInformation>
         let moveToDoneObserver: Observable<CellInformation>
@@ -17,7 +18,8 @@ class MainViewModel: ViewModelDescribing {
         let deleteObserver: Observable<Project>
         let tapAddProjectButtonObserver: Observable<Void>
         
-        init(moveToToDoObserver: Observable<CellInformation>, moveToDoingObserver: Observable<CellInformation>, moveToDoneObserver: Observable<CellInformation>, selectObserver: Observable<Project>, deleteObserver: Observable<Project>, tapAddProjectButtonObserver: Observable<Void>) {
+        init(viewDidLoadObserver: Observable<Void>, moveToToDoObserver: Observable<CellInformation>, moveToDoingObserver: Observable<CellInformation>, moveToDoneObserver: Observable<CellInformation>, selectObserver: Observable<Project>, deleteObserver: Observable<Project>, tapAddProjectButtonObserver: Observable<Void>) {
+            self.viewDidLoadObserver = viewDidLoadObserver
             self.moveToToDoObserver = moveToToDoObserver
             self.moveToDoingObserver = moveToDoingObserver
             self.moveToDoneObserver = moveToDoneObserver
@@ -62,6 +64,13 @@ class MainViewModel: ViewModelDescribing {
     }
     
     func transform(_ input: Input) -> Output {
+        input
+            .viewDidLoadObserver
+            .subscribe(onNext: { [weak self] in
+                self?.repository.fetchProjects()
+            })
+            .disposed(by: disposeBag)
+
         input
             .moveToToDoObserver
             .subscribe(onNext: { [weak self] cellInformation in
